@@ -1,0 +1,262 @@
+{
+    -webkit-user-select:none; /* Prevent copy paste for all elements except text fields */
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* set highlight color for user interaction */
+    -moz-tap-highlight-color:rgba(0, 0, 0, 0); /* set highlight color for user interaction */
+    -moz-user-select:-moz-none;
+    -webkit-touch-callout: none; /* prevent the popup menu on any links*/
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+body {
+    overflow-x:hidden;
+    -webkit-text-size-adjust:none;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color:#ffffff;
+    font-size:12px;
+    display:-webkit-box;
+    background: #000000;
+    /*margin-right:10px;*/
+    /* We want to layout our first container vertically */
+    -webkit-box-orient: vertical;
+    /* we want our child elements to stretch to fit the container */
+    -webkit-box-align:stretch;
+}
+/* General styles that apply to elements not contained within other classes and styles */
+
+#mensajeno {
+  text-align:center;
+  margin: 0 auto;
+}
+.bloque {
+    display : hidden;
+}
+.centrado {
+    text-align:center;
+    margin: 0 auto;
+    display; block;
+}
+
+.holder {
+  margin: 12rem auto 0;
+  width: 150px;
+  height: 400px;
+  position: relative;
+}
+.holder *, .holder *:before, .holder *:after {
+  position: absolute;
+  content: "";
+}
+
+.candle {
+  bottom: 0;
+  width: 150px;
+  height: 48px;
+  border-radius: 150px / 40px;
+  background: linear-gradient(#e48825, #e78e0e, #833c03);
+  z-index: 3;
+}
+/*.candle:before {
+  width: 100%;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #d47401;
+  background: #b86409;
+ 
+}*/
+
+.candle:after {
+  width: 33px;
+  height: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  top: 14px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+ 
+}
+
+.thread {  
+  width: 6px;
+  height: 36px;
+  top: -17px;
+  left: 50%;
+  z-index: 1;
+  border-radius: 40% 40% 0 0;
+  transform: translateX(-50%);
+  background: #121212;
+  
+}
+
+.flame {
+  width: 24px;
+  height: 100px;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%);
+  bottom: 100%;
+  border-radius: 50% 50% 20% 20%;
+  background: linear-gradient(white 60%, rgb(233, 140, 17), transparent);
+  animation: moveFlame 6s linear infinite, enlargeFlame 5s linear infinite;
+}
+
+@keyframes moveFlame {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-2deg) rotateZ(-1deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg) rotateZ(1deg);
+  }
+}
+
+@keyframes enlargeFlame {
+  0%, 100% {
+    height: 100px;
+  }
+  50% {
+    height: 120px;
+  }
+}
+
+.glow {
+  width: 26px;
+  height: 60px;
+  border-radius: 50% 50% 35% 35%;
+  left: 50%;
+  top: -48px;
+  transform: translateX(-50%);
+  background: rgba(0, 133, 255, .7);
+  box-shadow: 0 -40px 30px 0 #dc8a0c, 0 40px 50px 0 #dc8a0c,
+  inset 3px 0 2px 0 rgba(0, 133, 255, .6), 
+  inset -3px 0 2px 0 rgba(0, 133, 255, .6);
+}
+
+.glow:before {
+  width: 70%;
+  height: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.blinking-glow {
+  width: 100px;
+  height: 180px;
+  left: 50%;
+  top: -55%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #ff6000;
+
+  filter: blur(60px);
+  animation: blinkIt .1s infinite;
+}
+
+@keyframes blinkIt {
+  50% { opacity: .8;}
+}
+
+
+.outer-glow {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 100%;
+  left: -25px;
+  top: -120px;
+  opacity: 0.2;
+  -webkit-animation: glowFlicker 5s linear infinite;
+          animation: glowFlicker 5s linear infinite;
+  transform-origin: center center;
+}
+.outer-glow .outer-outer-glow {
+  width: 370px;
+  height: 370px;
+  background: #403536;
+  position: absolute;
+  border-radius: 100%;
+  left: 50%;
+  margin-left: -180px;
+  top: -200px;
+  -webkit-animation: glowFlicker 3s linear infinite;
+          animation: glowFlicker 3s linear infinite;
+  transform-origin: center center;
+}
+.outer-glow .inner-outer-glow {
+  width: 200px;
+  height: 200px;
+  background: #bdaaab;
+  position: absolute;
+  border-radius: 100%;
+  opacity: 1;
+  left: 50%;
+  margin-left: -100px;
+  top: -30px;
+}
+
+.candle .top {
+  width: 150px;
+  height: 46px;
+  background: #0D7070;
+  border-radius: 100%;
+  position: absolute;
+  top: -4px;
+  overflow: hidden;
+}
+.candle .top .top_inner {
+  width: 150px;
+  height: 46px;
+  background: #0D7070;
+  border-radius: 100%;
+  position: absolute;
+  top: 4px;
+}
+.candle .wax-drip {
+  width: 18px;
+  height: 20px;
+  background: #0a5959;
+  position: absolute;
+  top: 30px;
+  left: 18px;
+  border-radius: 80% 0 55% 50%/55% 0 80% 50%;
+}
+
+.candle .wax-droppings {
+  width: 50px;
+  height: 35px;
+  position: absolute;
+  background: #0a5959;
+  bottom: 0px;
+  border-radius: 80% 20% 55% 50%/55% 20% 80% 50%;
+  left: 5px;
+
+}
+.candle .wax-droppings .more-droppings {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  background: #0a5959;
+  bottom: -2px;
+  border-radius: 80% 30% 55% 50%/55% 30% 80% 50%;
+  left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

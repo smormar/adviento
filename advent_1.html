@@ -1,0 +1,2524 @@
+<html>
+	<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Corona de adviento</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">	
+	<script type="text/javascript" charset="utf-8" src="js/jquery-3.6.0.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.js"></script> -->
+	
+	
+	<!-- <script src="js/jq.appframework.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8" src="js/appframework.ui.min.js"></script> 
+	  -->
+	<!-- <script>
+	$.feat.nativeTouchScroll=true;
+				$.ui.autoLaunch = false; 
+				$.ui.backButtonText = "Atrás";
+				$.ui.useOSThemes=false;
+				$(document).ready(function(){
+					$.ui.launch();
+				});
+	</script>-->
+
+<script>
+$(document).ready(function(){
+	
+	esadviento();
+});
+</script>
+
+<script>
+    function setStyleSheet(url){
+       var stylesheet = document.getElementById("stylesheet");
+       stylesheet.setAttribute('href', url);
+    }
+</script>
+
+<script>
+function adjust(color, amount) {
+ 		   return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+		}
+</script>
+
+<script type="text/javascript">
+function esadviento(){	
+  	const a =new Date(); //fecha de hoy
+  	var currentColor = localStorage.getItem('velaoutcolor');
+	var fecha = localStorage.getItem('velaoutdura');
+	var fechafin = new Date(fecha);
+  	var durini = localStorage.getItem('velaoutdura1');
+  	// cargo colores personalizados de cada vela si fuese el caso
+   	var colorvelaA = localStorage.getItem('colorv1');
+   	var colorvelaB = localStorage.getItem('colorv2');
+   	var colorvelaC = localStorage.getItem('colorv3');
+   	var colorvelaD = localStorage.getItem('colorv4');
+	
+	//estamos con vela fuera de adviento
+  	if (a.getTime()<fechafin.getTime()){
+   		//document.getElementById('prueba').innerHTML = currentColor;
+
+   	if (durini==1){
+   		var hora= Math.round((fechafin.getTime()-a.getTime())/(1000*60*60)); //si la vela es diaria comprobamos las horas que le quedan
+   		
+   		if (hora >24){
+   			localStorage.removeItem('velaoutdura');
+   			localStorage.removeItem('velaoutdura1');
+   			esadviento();
+   		}
+   		else if (hora > 20 ){
+
+   		setStyleSheet('css/out7.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out7').show();
+ 		
+ 		} else if (hora > 16) {
+ 			setStyleSheet('css/out6.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out6').show();
+ 		} else if (hora > 12) {
+ 			setStyleSheet('css/out5.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out5').show();
+ 		} else if (hora > 9) {
+ 			setStyleSheet('css/out4.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out4').show();
+ 		} else if (hora > 6) {
+ 			setStyleSheet('css/out3.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out3').show();
+ 		} else if (hora > 3) {
+ 			setStyleSheet('css/out2.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out2').show();
+ 		} else if (hora < 4) {
+ 			setStyleSheet('css/out1.css');
+   		$('#noadvent').hide();
+   		var color2 = adjust(currentColor,5);
+   		var color3 = adjust(currentColor,10);
+   		//var color4 = adjust(currentColor, -30);
+   		var color5 = adjust(color3, 10);
+		//$('.candle').css({'background': +currentColor+ });
+		$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+		$('.candle .top .top_inner').css({'background': color5});
+		$('.candle .top').css({'background': color5});
+		$('.candle .wax-drip').css({'background': color5});
+		$('.candle .wax-drip .falling-wax').css({'background': color5});
+		$('.candle .wax-droppings').css({'background': color5});
+		$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 		$('#out1').show();
+ 		} 
+
+ 	// eligió vela semanal	
+   	} else if (durini ==7) {
+   		var diff = Math.round((fechafin.getTime() - a.getTime())/(1000*60*60*24));//si vela de 1 semana comprobamos los días que le quedan
+   		if (diff == 7) {
+   			setStyleSheet('css/out7.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			//var color4 = adjust(currentColor, -30);
+   			var color5 = adjust(color3, 10);
+		
+
+
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+ 			$('#out7').show();
+
+   		} else if (diff == 6) {
+   			setStyleSheet('css/out6.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			var color5 = adjust(color3, 10);
+		
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+
+   			$('#out6').show();
+
+   		} else if (diff == 5) {
+   			setStyleSheet('css/out5.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			var color5 = adjust(color3, 10);
+		
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+
+   			$('#out5').show();
+
+   		} else if (diff == 4) {
+   			setStyleSheet('css/out4.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			var color5 = adjust(color3, 10);
+		
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+
+
+   			$('#out4').show();
+   		} else if (diff == 3) {
+   			setStyleSheet('css/out3.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			var color5 = adjust(color3, 10);
+		
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+
+
+   			$('#out3').show();
+
+   		} else if (diff == 2) {
+   			setStyleSheet('css/out2.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			var color5 = adjust(color3, 10);
+		
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+
+   			$('#out2').show();
+
+
+   		} else if (diff == 1) {
+   			setStyleSheet('css/out1.css');
+   			$('#noadvent').hide();
+   			var color2 = adjust(currentColor,5);
+   			var color3 = adjust(currentColor,10);
+   			var color5 = adjust(color3, 10);
+		
+			$('.candle').css({'background': 'linear-gradient( to top, '+currentColor+ ' 70%, '+color2+' 50%, ' +color3+ ' )'});
+			$('.candle .top .top_inner').css({'background': color5});
+			$('.candle .top').css({'background': color5});
+			$('.candle .wax-drip').css({'background': color5});
+			$('.candle .wax-drip .falling-wax').css({'background': color5});
+			$('.candle .wax-droppings').css({'background': color5});
+			$('.candle .wax-droppings .more-droppings').css({'background': color5});
+
+   			$('#out1').show();
+   		} 
+	}
+  
+  //no hay vela encendida y comprobamos si estamos en adviento o no
+  } 
+  //else {
+  	var year=a.getFullYear(); //le saca el año
+  	//echa tres semanas pa' trás desde navidad
+  	var d = new Date(new Date(year, 11, 24, 0, 0, 0, 0).getTime() - 3 * 7 * 24 * 60 * 60 * 1000); //in javascript months are zero-indexed. january is 0, december is 11
+  	//va tirando pa' trás un día mientras no sea domingo
+  	while (d.getDay() != 0) {
+    d = new Date(d.getTime() - 24 * 60 * 60 * 1000); //primer domingo de adviento
+  	}
+	
+
+	//comprobamos si estamos en adviento
+  	var navidad = new Date(year, 11, 25, 0, 0, 0, 0);
+ 	//calculamos cuanto dura el adviento
+ 	var duradvent = Math.round((navidad.getTime() - d.getTime())/(1000*60*60*24));
+
+ 	if ((d.getTime()<=a.getTime())&&(a.getTime()<navidad.getTime())) {
+	//estamos en adviento
+		var resta_1 = Math.round((a.getTime()-d.getTime())/(1000*60*60*24)); //hoy menos primer domingo, días de adviento que llevamos
+    	localStorage.removeItem('velaoutdura'); //borramos las velas fuera de adviento por si siguieran activas
+     	localStorage.removeItem('velaoutdura1'); //borramos las velas fuera de adviento por si siguieran activas
+	
+   		if (resta_1 == 1 | resta_1 == 0){
+   			
+   			setStyleSheet('css/ad1.css');
+  			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			$('#ad1w').show();
+ 		}
+ 		if (resta_1 == 2){
+   			
+   			setStyleSheet('css/ad2.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			$('#ad1w').show();
+ 		}
+		if (resta_1 == 3){
+   			setStyleSheet('css/ad3.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad1w').show();
+ 		}
+		if (resta_1 == 4){
+   			setStyleSheet('css/ad4.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad1w').show();
+ 		}
+ 		if (resta_1 == 5){
+   			setStyleSheet('css/ad5.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad1w').show();
+ 		}
+ 		if (resta_1 == 6){
+   			setStyleSheet('css/ad6.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad1w').show();
+ 		}
+ 		if (resta_1 == 7){
+   			setStyleSheet('css/ad7.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			$('.Acandle .wax-drip').css({'background': color_15});
+			$('.Acandle .wax-drip .falling-wax').css({'background': color_15});
+			$('.Acandle .wax-droppings').css({'background': color_15});
+			$('.Acandle .wax-droppings .more-droppings').css({'background': color_15});
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad1w').show();
+ 		}
+ 		if (resta_1 == 8){
+   			setStyleSheet('css/ad8.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 9){
+   			setStyleSheet('css/ad9.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 10){
+   			setStyleSheet('css/ad10.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 11){
+   			setStyleSheet('css/ad11.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 12){
+   			setStyleSheet('css/ad12.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 13){
+   			setStyleSheet('css/ad13.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 14){
+   			setStyleSheet('css/ad14.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-drip').css({'background': color_25});
+			$('.Bcandle .wax-drip .falling-wax').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad2w').show();
+ 		}
+ 		if (resta_1 == 15){
+   			setStyleSheet('css/ad15.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 16){
+   			setStyleSheet('css/ad16.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 17){
+   			setStyleSheet('css/ad17.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 18){
+   			setStyleSheet('css/ad18.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 19){
+   			setStyleSheet('css/ad19.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 20){
+   			setStyleSheet('css/ad20.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 21){
+   			setStyleSheet('css/ad21.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			$('.Ccandle .wax-drip').css({'background': color_35});
+			$('.Ccandle .wax-drip .falling-wax').css({'background': color_35});
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			}
+
+			
+			$('#ad3w').show();
+ 		}
+ 		if (resta_1 == 22){
+   			setStyleSheet('css/ad22.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			
+			$('#ad4w').show();
+ 		}
+		if (resta_1 == 23){
+   			setStyleSheet('css/ad23.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			
+			$('#ad4w').show();
+ 		}
+ 		if (resta_1 == 24){
+   			setStyleSheet('css/ad24.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			
+			$('#ad4w').show();
+ 		}
+ 		if (resta_1 == 25){
+   			setStyleSheet('css/ad25.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			
+			$('#ad4w').show();
+ 		}
+ 		if (resta_1 == 26){
+   			setStyleSheet('css/ad26.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			
+			$('#ad4w').show();
+ 		}
+ 		if (resta_1 == 27){
+   			setStyleSheet('css/ad27.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			
+			$('#ad4w').show();
+ 		}
+ 		if (resta_1 == 28){
+   			setStyleSheet('css/ad28.css');
+   			/*para vela 1*/
+   			if (colorvelaA != null){
+   			var color_15 = adjust(colorvelaA,20);
+			$('.Acandle').css({'background': colorvelaA});
+			$('.Acandle .Atop .Atop_inner').css({'background': color_15});
+			$('.Acandle .Atop').css({'background': color_15});
+			
+			}
+			
+			/*para vela 2*/
+   			if (colorvelaB != null){
+   			var color_25 = adjust(colorvelaB, 20);
+			$('.Bcandle').css({'background': colorvelaB});
+			$('.Bcandle .Btop .Btop_inner').css({'background': color_25});
+			$('.Bcandle .Btop').css({'background': color_25});
+			$('.Bcandle .wax-droppings').css({'background': color_25});
+			$('.Bcandle .wax-droppings .more-droppings').css({'background': color_25});
+			
+			}
+
+			/*para vela 3*/
+   			if (colorvelaC != null){
+   			var color_35 = adjust(colorvelaC, 20);
+			
+			$('.Ccandle').css({'background': colorvelaC});
+			$('.Ccandle .Ctop .Ctop_inner').css({'background': color_35});
+			$('.Ccandle .Ctop').css({'background': color_35});
+			
+			}
+
+			/*para vela 4*/
+   			if (colorvelaD != null){
+   			var color_45 = adjust(colorvelaD, 20);
+			
+   			$('.Dcandle').css({'background': colorvelaD});
+			$('.Dcandle .Dtop .Dtop_inner').css({'background': color_45});
+			$('.Dcandle .Dtop').css({'background': color_45});
+			$('.Dcandle .wax-drip').css({'background': color_45});
+			$('.Dcandle .wax-drip .falling-wax').css({'background': color_45});
+			
+			}
+
+			$('#ad4w').show();
+ 		}
+ 	} else {  //no estamos en adviento puede que lo hayamos pasado o que no hayamos llegado
+	//si ya lo pasamos estamos en 26 de Diciembre o más
+		//justo es navidad
+		if ((a.getDate()==25) && (a.getMonth()==11)) {
+		
+	 			setStyleSheet('css/main.css');
+ 				/*document.getElementById('noadvent').style.visibility='hidden';*/
+ 				$('#navidad').show();
+ 		}	else if (a.getTime()>(navidad.getTime()+(1000*60*60*24))) {
+	 		var nextyear = year + 1;
+	 		var nextchristmas = new Date(nextyear, 11, 25, 0, 0, 0, 0);
+	 		var faltaparanavidad = Math.round((nextchristmas.getTime()-a.getTime())/(1000*60*60*24));
+	 		var advent = 0 ;
+		 	document.getElementById('mensajeno').innerHTML = 'Faltan '+faltaparanavidad+ ' días para Navidad';
+		 	// $('#noadvent').show();
+		 	document.getElementById('noadvent').style.visibility='visible';
+			
+		} else {
+			
+			var faltaparanavidad = Math.round((navidad.getTime()-a.getTime())/(1000*60*60*24));
+			var advent = 0 ;
+		 	document.getElementById('mensajeno').innerHTML = 'Faltan ' +faltaparanavidad+' días para Navidad.';
+		 	document.getElementById('noadvent').style.visibility='visible';
+
+		 	// $('#noadvent').show();
+			
+		}
+  	}
+  //}
+}
+</script>
+
+<script>
+	//para salir de la aplicación
+	function salirapp(){
+	if(navigator.app){
+        navigator.app.exitApp();
+	} else if(navigator.device){
+        navigator.device.exitApp();
+	}
+
+	}
+</script>
+<script>
+	//para menu encender vela fuera de adviento
+	function velaoutonm(){
+	$('#noadvent').hide();
+	$('#velaoutform').show();
+
+	}
+</script>
+<script>
+	//para encender vela fuera de adviento
+	function encenderout(){
+		const a =new Date(); //fecha de hoy
+		$('#velaoutform').hide();
+		
+		var col_out = document.getElementById('color').value;
+		var dia_out = document.querySelector('input[name="tiempo"]:checked').value;
+		var dia_fin = new Date(a.getTime()+dia_out*24*60*60*1000);
+		
+		localStorage.setItem('velaoutcolor', col_out);
+		localStorage.setItem('velaoutdura', dia_fin);
+		localStorage.setItem('velaoutdura1', dia_out);
+		
+		esadviento();
+		
+	}
+</script>
+
+<script>
+	//para activar formulario cambio color adviento
+	function changecolor(){
+		
+		$('#changecolor').show();
+	}
+</script>
+<script>
+	//para guardar cambio color adviento
+	function changecolor2(){
+		$('#changecolor').hide();
+		
+		var colv1 = document.getElementById('color_v1').value;
+		var colv2 = document.getElementById('color_v2').value;
+		var colv3 = document.getElementById('color_v3').value;
+		var colv4 = document.getElementById('color_v4').value;
+		
+		localStorage.setItem('colorv1', colv1);
+		localStorage.setItem('colorv2', colv2);
+		localStorage.setItem('colorv3', colv3);
+		localStorage.setItem('colorv4', colv4);
+
+		esadviento();
+		
+	}
+</script>
+
+<script>
+	//para guardar cambio color adviento
+	function restorecolor(){
+		$('#changecolor').hide();
+		var colv1 =  "#3b094d";
+		var colv2 =  "#3b094d";
+		var colv3 =  "#d210e8";
+		var colv4 =  "#3b094d";
+		
+		localStorage.setItem('colorv1', colv1);
+		localStorage.setItem('colorv2', colv2);
+		localStorage.setItem('colorv3', colv3);
+		localStorage.setItem('colorv4', colv4);
+
+		esadviento();
+		
+	}
+</script>
+
+<!-- no mover de antes del head -->
+<link id="stylesheet" rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body> 
+	
+	<div id="velaoutform" style="display:none">
+		<div class="centrado"><form name="velaoutchoose">
+		Color: <INPUT TYPE="color"  VALUE="colour" id="color"></INPUT>
+		<INPUT TYPE="radio"  id="tiempo1d" name="tiempo" VALUE="1" checked></INPUT>
+		<label for="tiempo1d">1 día</label>
+		<INPUT TYPE="radio"  id="tiempo1w" name="tiempo" VALUE="7"></INPUT>
+		<label for="tiempo1w">1 semana</label>
+		<INPUT TYPE="button"  VALUE="Encender" ONCLICK="return encenderout()"></INPUT>
+		</form></div>
+	</div>
+	<div id="changecolor" style="display:none">
+		<div class="centrado"><form name="colorchoose">
+		Color vela 1: <INPUT TYPE="color"  VALUE="colour" id="color_v1"></INPUT>
+		Color vela 2: <INPUT TYPE="color"  VALUE="colour" id="color_v2"></INPUT>
+		Color vela 3: <INPUT TYPE="color"  VALUE="colour" id="color_v3"></INPUT>
+		Color vela 4: <INPUT TYPE="color"  VALUE="colour" id="color_v4"></INPUT>
+		<INPUT TYPE="button"  VALUE="Cambiar" ONCLICK="return changecolor2()"></INPUT>
+		<INPUT TYPE="button"  VALUE="Tradicional" ONCLICK="return restorecolor()"></INPUT>
+		</form></div>
+	</div>
+	<div id="out7" style="display:none">
+		<!-- <div class="centrado"> -->
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip">
+      				<div class="falling-wax"></div>
+    			</div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+			</div>
+		<!-- </div> -->
+	</div>
+	<div id="out6" style="display:none">
+		<div class="centrado">
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip">
+      				<div class="falling-wax"></div>
+    			</div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="out5" style="display:none">
+		<div class="centrado">
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip">
+      				<div class="falling-wax"></div>
+    			</div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="out4" style="display:none">
+		<div class="centrado">
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip">
+      				<div class="falling-wax"></div>
+    			</div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="out3" style="display:none">
+		<div class="centrado">
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip">
+      				<div class="falling-wax"></div>
+    			</div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="out2" style="display:none">
+		<div class="centrado">
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip">
+      				<div class="falling-wax"></div>
+    			</div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="out1" style="display:none">
+		<div class="centrado">
+			<div class="holder">
+			<div class="candle">	
+				
+				<div class="top">
+      				<div class="top_inner"></div>
+    			</div>
+				<div class="outer-glow">
+    				<div class="outer-outer-glow"></div>
+    				<div class="inner-outer-glow"></div>
+  				</div>
+  				<div class="wax-drip"></div>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+				<div class="thread"></div>
+				<div class="glow"></div>
+				<div class="flame"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+	<div id="ad1w" style="display:none">
+		 <div class="displayBox">
+			<div class="candleBox">
+				<div class="Acandle">
+					<a href="#" onclick="return changecolor()">
+						<div class="Atop">
+      						<div class="Atop_inner"></div>
+    					</div>
+    					<div class="outer-glow">
+    						<div class="outer-outer-glow"></div>
+    						<div class="inner-outer-glow"></div>
+  						</div>
+  					</a>
+  						<div class="wax-drip">
+      						<div class="falling-wax"></div>
+    					</div>
+    					<div class="thread"></div>
+    					<div class="glow"></div>
+    					<div class="flame"></div>
+    			</div>
+
+			<div class="Bcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Btop">
+      					<div class="Btop_inner"></div>
+    				</div>
+    			</a>	
+    				<div class="thread"></div>
+    		</div>
+			<div class="Ccandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Ctop">
+      					<div class="Ctop_inner"></div>
+    				</div>
+    			</a>
+    			<div class="thread"></div>
+			</div>
+			<div class="Dcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Dtop">
+      					<div class="Dtop_inner"></div>
+    				</div>
+    			</a>
+    			<div class="thread"></div>
+			</div>
+		<div class="ornament orna1">
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		 <div class="ornament orna2">
+			<div class="capFull"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna3">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna4">
+			<div class="cap"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna5">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna6">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna7">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna8">
+			<div class="capFull"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+
+
+<div class="mistletoe">
+  <svg width="400px" height="300px" viewBox="0 0 400 300">
+      <!-- <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-6">
+          <feOffset dx="-1" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+          <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+          <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+          <feMerge>
+              <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+      </filter>
+      <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-7">
+          <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+          <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+          <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+          <feMerge>
+              <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+      </filter> -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+         <g id="leaf2" sketch:type="MSLayerGroup" transform="translate(65.000000, 118.000000)">
+          <path d="M110.990977,151.330487 L112.419787,151.330487 C112.404205,150.853463 112.396363,150.374804 112.396363,149.894601 C112.396363,121.610297 139.603251,98.6813376 173.164648,98.6813376 C173.790165,98.6813376 174.413475,98.6893025 175.034442,98.7051186 L175.034442,97.3135279 C159.196871,89.2421527 148.316457,75.0506656 147.101031,58.67254 C143.575485,61.5752049 139.361277,63.262819 134.833884,63.262819 C127.141714,63.262819 120.353614,58.391188 116.311145,50.9656516 C109.412591,59.4681684 96.6348673,65.1773335 82.0122199,65.1773335 C66.2367149,65.1773335 52.6085108,58.5324536 46.1932459,48.903962 L3.01344874,48.9039602 L3.01344874,104.034227 C8.40333179,101.810259 14.2295157,100.595852 20.3090377,100.595852 C40.6272859,100.595852 58.1158754,114.160172 65.9449207,133.641997 C70.6540151,130.25669 75.9482688,128.356313 81.5447716,128.356313 C93.7995432,128.356313 104.605069,137.468381 110.990977,151.330487 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup" transform="translate(89.023945, 100.117223) rotate(121.000000) translate(-89.023945, -100.117223) "></path>
+          <path d="M60.3024207,101.032683 L94.0379742,110.032683 L130.302421,106.860466" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup" transform="translate(95.302421, 105.532683) rotate(113.000000) translate(-95.302421, -105.532683) "></path>
+      </g>
+      <g id="leaf1" sketch:type="MSLayerGroup" transform="translate(199.000000, 147.000000)">
+          <path d="M121.773745,124 L123.385113,124 C123.36754,123.422503 123.358696,122.843027 123.358696,122.261682 C123.358696,88.0200278 154.04179,60.2616822 191.891305,60.2616822 C192.596743,60.2616822 193.299693,60.2713248 194,60.2904721 L194,58.6057792 C176.138874,48.8343795 163.868277,31.6538262 162.497557,11.8260762 C158.521554,15.3401115 153.768899,17.3831776 148.663044,17.3831776 C139.988051,17.3831776 132.33264,11.4854646 127.773668,2.49593289 C119.99369,12.7892829 105.583365,19.7009346 89.0923917,19.7009346 C71.3012609,19.7009346 55.9317903,11.6564842 48.6968513,2.1876676e-06 L3.86548777e-07,8.52651283e-14 L3.86548777e-07,66.7420141 C6.07854491,64.0496298 12.6491366,62.5794393 19.5054352,62.5794393 C42.4197323,62.5794393 62.1428272,79.0007289 70.9721844,102.585892 C76.2829567,98.4875587 82.2536535,96.1869159 88.5652178,96.1869159 C102.385773,96.1869159 114.571914,107.218203 121.773745,124 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup"></path>
+          <path d="M64.5,40.5 L98.2355535,49.5 L134.5,46.3277829" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+      </g>
+   
+      <g id="fruit" sketch:type="MSLayerGroup" transform="translate(169.000000, 128.000000)">
+          <!-- <circle id="Oval-2" fill="#AA0201" filter="url(#filter-6)" sketch:type="MSShapeGroup" cx="70.5" cy="63.5" r="28.5"></circle>
+          <circle id="Oval-1" fill="#AA0201" filter="url(#filter-7)" sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle> -->
+          <circle id="Oval-2" fill="#AA0201"  sketch:type="MSShapeGroup" cx="70.5" cy="63.5" r="28.5"></circle>
+          <circle id="Oval-1" fill="#AA0201"  sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle>
+          <circle id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="46.5" cy="29.5" r="4.5"></circle>
+          <circle id="Oval-6" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="49.5" cy="19.5" r="2.5"></circle>
+          <path d="M81.2727273,57.8571429 C83.0802046,57.8571429 84.5454545,56.3221191 84.5454545,54.4285714 C84.5454545,52.5350237 83.0802046,51 81.2727273,51 C79.4652499,51 78,52.5350237 78,54.4285714 C78,56.3221191 79.4652499,57.8571429 81.2727273,57.8571429 Z" id="Oval-4" fill="#EBEBEB" sketch:type="MSShapeGroup"></path>
+          <ellipse id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="86.4545455" cy="60.5714286" rx="2.45454545" ry="2.57142857"></ellipse>
+          
+      </g>
+    </g>
+  </svg>
+</div>
+	</div>
+	<div id="plate"></div>
+</div>
+</div>
+<!-- fin de diax -->
+
+<!-- fin de diax -->
+
+	<div id="ad2w" style="display:none">
+		 <div class="displayBox">
+			<div class="candleBox">
+				<div class="Acandle">
+					<a href="#" onclick="return changecolor()">
+						<div class="Atop">
+      						<div class="Atop_inner"></div>
+    					</div>
+    					
+  					</a>
+  						
+    					<div class="thread"></div>
+    					
+    			</div>
+			<div class="Bcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Btop">
+      					<div class="Btop_inner"></div>
+    				</div>
+    				<div class="outer-glow">
+    						<div class="outer-outer-glow"></div>
+    						<div class="inner-outer-glow"></div>
+  						</div>
+    			</a>
+    				<div class="wax-drip">
+      						<div class="falling-wax"></div>
+    					</div>	
+    				<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+    				<div class="thread"></div>
+    				<div class="glow"></div>
+    					<div class="flame"></div>
+    		</div>
+			<div class="Ccandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Ctop">
+      					<div class="Ctop_inner"></div>
+    				</div>
+    			</a>
+    			<div class="thread"></div>
+			</div>
+			<div class="Dcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Dtop">
+      					<div class="Dtop_inner"></div>
+    				</div>
+    			</a>
+    			<div class="thread"></div>
+			</div>
+		<div class="ornament orna1">
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		 <div class="ornament orna2">
+			<div class="capFull"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna3">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna4">
+			<div class="cap"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna5">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna6">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna7">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna8">
+			<div class="capFull"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+
+
+<div class="mistletoe">
+  <svg width="400px" height="300px" viewBox="0 0 400 300">
+      
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+         <g id="leaf2" sketch:type="MSLayerGroup" transform="translate(65.000000, 118.000000)">
+          <path d="M110.990977,151.330487 L112.419787,151.330487 C112.404205,150.853463 112.396363,150.374804 112.396363,149.894601 C112.396363,121.610297 139.603251,98.6813376 173.164648,98.6813376 C173.790165,98.6813376 174.413475,98.6893025 175.034442,98.7051186 L175.034442,97.3135279 C159.196871,89.2421527 148.316457,75.0506656 147.101031,58.67254 C143.575485,61.5752049 139.361277,63.262819 134.833884,63.262819 C127.141714,63.262819 120.353614,58.391188 116.311145,50.9656516 C109.412591,59.4681684 96.6348673,65.1773335 82.0122199,65.1773335 C66.2367149,65.1773335 52.6085108,58.5324536 46.1932459,48.903962 L3.01344874,48.9039602 L3.01344874,104.034227 C8.40333179,101.810259 14.2295157,100.595852 20.3090377,100.595852 C40.6272859,100.595852 58.1158754,114.160172 65.9449207,133.641997 C70.6540151,130.25669 75.9482688,128.356313 81.5447716,128.356313 C93.7995432,128.356313 104.605069,137.468381 110.990977,151.330487 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup" transform="translate(89.023945, 100.117223) rotate(121.000000) translate(-89.023945, -100.117223) "></path>
+          <path d="M60.3024207,101.032683 L94.0379742,110.032683 L130.302421,106.860466" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup" transform="translate(95.302421, 105.532683) rotate(113.000000) translate(-95.302421, -105.532683) "></path>
+      </g>
+      <g id="leaf1" sketch:type="MSLayerGroup" transform="translate(199.000000, 147.000000)">
+          <path d="M121.773745,124 L123.385113,124 C123.36754,123.422503 123.358696,122.843027 123.358696,122.261682 C123.358696,88.0200278 154.04179,60.2616822 191.891305,60.2616822 C192.596743,60.2616822 193.299693,60.2713248 194,60.2904721 L194,58.6057792 C176.138874,48.8343795 163.868277,31.6538262 162.497557,11.8260762 C158.521554,15.3401115 153.768899,17.3831776 148.663044,17.3831776 C139.988051,17.3831776 132.33264,11.4854646 127.773668,2.49593289 C119.99369,12.7892829 105.583365,19.7009346 89.0923917,19.7009346 C71.3012609,19.7009346 55.9317903,11.6564842 48.6968513,2.1876676e-06 L3.86548777e-07,8.52651283e-14 L3.86548777e-07,66.7420141 C6.07854491,64.0496298 12.6491366,62.5794393 19.5054352,62.5794393 C42.4197323,62.5794393 62.1428272,79.0007289 70.9721844,102.585892 C76.2829567,98.4875587 82.2536535,96.1869159 88.5652178,96.1869159 C102.385773,96.1869159 114.571914,107.218203 121.773745,124 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup"></path>
+          <path d="M64.5,40.5 L98.2355535,49.5 L134.5,46.3277829" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+      </g>
+   
+      <g id="fruit" sketch:type="MSLayerGroup" transform="translate(169.000000, 128.000000)">
+          <circle id="Oval-2" fill="#AA0201"  sketch:type="MSShapeGroup" cx="70.5" cy="63.5" r="28.5"></circle>
+          <circle id="Oval-1" fill="#AA0201"  sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle>
+          <circle id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="46.5" cy="29.5" r="4.5"></circle>
+          <circle id="Oval-6" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="49.5" cy="19.5" r="2.5"></circle>
+          <path d="M81.2727273,57.8571429 C83.0802046,57.8571429 84.5454545,56.3221191 84.5454545,54.4285714 C84.5454545,52.5350237 83.0802046,51 81.2727273,51 C79.4652499,51 78,52.5350237 78,54.4285714 C78,56.3221191 79.4652499,57.8571429 81.2727273,57.8571429 Z" id="Oval-4" fill="#EBEBEB" sketch:type="MSShapeGroup"></path>
+          <ellipse id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="86.4545455" cy="60.5714286" rx="2.45454545" ry="2.57142857"></ellipse>
+          
+      </g>
+    </g>
+  </svg>
+</div>
+	</div>
+	<div id="plate"></div>
+</div>
+</div>
+<!-- fin de diax -->
+
+
+<!-- fin de diax -->
+	<div id="ad3w" style="display:none">
+		 <div class="displayBox">
+			<div class="candleBox">
+				<div class="Acandle">
+					<a href="#" onclick="return changecolor()">
+						<div class="Atop">
+      						<div class="Atop_inner"></div>
+    					</div>
+    					
+  					</a>
+  						
+    					<div class="thread"></div>
+    					
+    			</div>
+			<div class="Bcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Btop">
+      					<div class="Btop_inner"></div>
+    				</div>
+    				
+    			</a>
+    				<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>
+    				<div class="thread"></div>
+    				
+    		</div>
+			<div class="Ccandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Ctop">
+      					<div class="Ctop_inner"></div>
+    				</div>
+    				<div class="outer-glow">
+    						<div class="outer-outer-glow"></div>
+    						<div class="inner-outer-glow"></div>
+  						</div>
+    			</a>
+    			<div class="wax-drip">
+      						<div class="falling-wax"></div>
+    					</div>	
+    			<div class="thread"></div>
+    			<div class="glow"></div>
+    					<div class="flame"></div>
+			</div>
+			<div class="Dcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Dtop">
+      					<div class="Dtop_inner"></div>
+    				</div>
+    			</a>
+    			<div class="thread"></div>
+			</div>
+		<div class="ornament orna1">
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		 <div class="ornament orna2">
+			<div class="capFull"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna3">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna4">
+			<div class="cap"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna5">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna6">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna7">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna8">
+			<div class="capFull"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+
+
+<div class="mistletoe">
+  <svg width="400px" height="300px" viewBox="0 0 400 300">
+      
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+         <g id="leaf2" sketch:type="MSLayerGroup" transform="translate(65.000000, 118.000000)">
+          <path d="M110.990977,151.330487 L112.419787,151.330487 C112.404205,150.853463 112.396363,150.374804 112.396363,149.894601 C112.396363,121.610297 139.603251,98.6813376 173.164648,98.6813376 C173.790165,98.6813376 174.413475,98.6893025 175.034442,98.7051186 L175.034442,97.3135279 C159.196871,89.2421527 148.316457,75.0506656 147.101031,58.67254 C143.575485,61.5752049 139.361277,63.262819 134.833884,63.262819 C127.141714,63.262819 120.353614,58.391188 116.311145,50.9656516 C109.412591,59.4681684 96.6348673,65.1773335 82.0122199,65.1773335 C66.2367149,65.1773335 52.6085108,58.5324536 46.1932459,48.903962 L3.01344874,48.9039602 L3.01344874,104.034227 C8.40333179,101.810259 14.2295157,100.595852 20.3090377,100.595852 C40.6272859,100.595852 58.1158754,114.160172 65.9449207,133.641997 C70.6540151,130.25669 75.9482688,128.356313 81.5447716,128.356313 C93.7995432,128.356313 104.605069,137.468381 110.990977,151.330487 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup" transform="translate(89.023945, 100.117223) rotate(121.000000) translate(-89.023945, -100.117223) "></path>
+          <path d="M60.3024207,101.032683 L94.0379742,110.032683 L130.302421,106.860466" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup" transform="translate(95.302421, 105.532683) rotate(113.000000) translate(-95.302421, -105.532683) "></path>
+      </g>
+      <g id="leaf1" sketch:type="MSLayerGroup" transform="translate(199.000000, 147.000000)">
+          <path d="M121.773745,124 L123.385113,124 C123.36754,123.422503 123.358696,122.843027 123.358696,122.261682 C123.358696,88.0200278 154.04179,60.2616822 191.891305,60.2616822 C192.596743,60.2616822 193.299693,60.2713248 194,60.2904721 L194,58.6057792 C176.138874,48.8343795 163.868277,31.6538262 162.497557,11.8260762 C158.521554,15.3401115 153.768899,17.3831776 148.663044,17.3831776 C139.988051,17.3831776 132.33264,11.4854646 127.773668,2.49593289 C119.99369,12.7892829 105.583365,19.7009346 89.0923917,19.7009346 C71.3012609,19.7009346 55.9317903,11.6564842 48.6968513,2.1876676e-06 L3.86548777e-07,8.52651283e-14 L3.86548777e-07,66.7420141 C6.07854491,64.0496298 12.6491366,62.5794393 19.5054352,62.5794393 C42.4197323,62.5794393 62.1428272,79.0007289 70.9721844,102.585892 C76.2829567,98.4875587 82.2536535,96.1869159 88.5652178,96.1869159 C102.385773,96.1869159 114.571914,107.218203 121.773745,124 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup"></path>
+          <path d="M64.5,40.5 L98.2355535,49.5 L134.5,46.3277829" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+      </g>
+   
+      <g id="fruit" sketch:type="MSLayerGroup" transform="translate(169.000000, 128.000000)">
+          <circle id="Oval-2" fill="#AA0201"  sketch:type="MSShapeGroup" cx="70.5" cy="63.5" r="28.5"></circle>
+          <circle id="Oval-1" fill="#AA0201"  sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle>
+          <circle id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="46.5" cy="29.5" r="4.5"></circle>
+          <circle id="Oval-6" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="49.5" cy="19.5" r="2.5"></circle>
+          <path d="M81.2727273,57.8571429 C83.0802046,57.8571429 84.5454545,56.3221191 84.5454545,54.4285714 C84.5454545,52.5350237 83.0802046,51 81.2727273,51 C79.4652499,51 78,52.5350237 78,54.4285714 C78,56.3221191 79.4652499,57.8571429 81.2727273,57.8571429 Z" id="Oval-4" fill="#EBEBEB" sketch:type="MSShapeGroup"></path>
+          <ellipse id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="86.4545455" cy="60.5714286" rx="2.45454545" ry="2.57142857"></ellipse>
+          
+      </g>
+    </g>
+  </svg>
+</div>
+	</div>
+	<div id="plate"></div>
+</div>
+</div>
+<!-- fin de diax -->
+
+
+	<div id="ad4w" style="display:none">
+		 <div class="displayBox">
+			<div class="candleBox">
+				<div class="Acandle">
+					<a href="#" onclick="return changecolor()">
+						<div class="Atop">
+      						<div class="Atop_inner"></div>
+    					</div>
+    					
+  					</a>
+  						
+    					<div class="thread"></div>
+    					
+    			</div>
+			<div class="Bcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Btop">
+      					<div class="Btop_inner"></div>
+    				</div>
+    				
+    			</a>
+    			<div class="wax-droppings">
+      				<div class="more-droppings"></div>
+    			</div>	
+    				<div class="thread"></div>
+    				
+    		</div>
+			<div class="Ccandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Ctop">
+      					<div class="Ctop_inner"></div>
+    				</div>
+    				
+    			</a>
+    			
+    			<div class="thread"></div>
+    			
+			</div>
+			<div class="Dcandle">
+				<a href="#" onclick="return changecolor()">
+					<div class="Dtop">
+      					<div class="Dtop_inner"></div>
+    				</div>
+    				<div class="outer-glow">
+    						<div class="outer-outer-glow"></div>
+    						<div class="inner-outer-glow"></div>
+  						</div>
+    			</a>
+    			<div class="wax-drip">
+      						<div class="falling-wax"></div>
+    					</div>	
+    			<div class="thread"></div>
+    			<div class="glow"></div>
+    					<div class="flame"></div>
+			</div>
+		<div class="ornament orna1">
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		 <div class="ornament orna2">
+			<div class="capFull"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna3">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna4">
+			<div class="cap"></div>
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna5">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna6">
+			<div class="cap"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna7">
+			<div class="silverOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+		<div class="ornament orna8">
+			<div class="capFull"></div>
+			<div class="redOrnament">
+				<div class="spot"></div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+
+
+<div class="mistletoe">
+  <svg width="400px" height="300px" viewBox="0 0 400 300">
+      
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+         <g id="leaf2" sketch:type="MSLayerGroup" transform="translate(65.000000, 118.000000)">
+          <path d="M110.990977,151.330487 L112.419787,151.330487 C112.404205,150.853463 112.396363,150.374804 112.396363,149.894601 C112.396363,121.610297 139.603251,98.6813376 173.164648,98.6813376 C173.790165,98.6813376 174.413475,98.6893025 175.034442,98.7051186 L175.034442,97.3135279 C159.196871,89.2421527 148.316457,75.0506656 147.101031,58.67254 C143.575485,61.5752049 139.361277,63.262819 134.833884,63.262819 C127.141714,63.262819 120.353614,58.391188 116.311145,50.9656516 C109.412591,59.4681684 96.6348673,65.1773335 82.0122199,65.1773335 C66.2367149,65.1773335 52.6085108,58.5324536 46.1932459,48.903962 L3.01344874,48.9039602 L3.01344874,104.034227 C8.40333179,101.810259 14.2295157,100.595852 20.3090377,100.595852 C40.6272859,100.595852 58.1158754,114.160172 65.9449207,133.641997 C70.6540151,130.25669 75.9482688,128.356313 81.5447716,128.356313 C93.7995432,128.356313 104.605069,137.468381 110.990977,151.330487 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup" transform="translate(89.023945, 100.117223) rotate(121.000000) translate(-89.023945, -100.117223) "></path>
+          <path d="M60.3024207,101.032683 L94.0379742,110.032683 L130.302421,106.860466" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup" transform="translate(95.302421, 105.532683) rotate(113.000000) translate(-95.302421, -105.532683) "></path>
+      </g>
+      <g id="leaf1" sketch:type="MSLayerGroup" transform="translate(199.000000, 147.000000)">
+          <path d="M121.773745,124 L123.385113,124 C123.36754,123.422503 123.358696,122.843027 123.358696,122.261682 C123.358696,88.0200278 154.04179,60.2616822 191.891305,60.2616822 C192.596743,60.2616822 193.299693,60.2713248 194,60.2904721 L194,58.6057792 C176.138874,48.8343795 163.868277,31.6538262 162.497557,11.8260762 C158.521554,15.3401115 153.768899,17.3831776 148.663044,17.3831776 C139.988051,17.3831776 132.33264,11.4854646 127.773668,2.49593289 C119.99369,12.7892829 105.583365,19.7009346 89.0923917,19.7009346 C71.3012609,19.7009346 55.9317903,11.6564842 48.6968513,2.1876676e-06 L3.86548777e-07,8.52651283e-14 L3.86548777e-07,66.7420141 C6.07854491,64.0496298 12.6491366,62.5794393 19.5054352,62.5794393 C42.4197323,62.5794393 62.1428272,79.0007289 70.9721844,102.585892 C76.2829567,98.4875587 82.2536535,96.1869159 88.5652178,96.1869159 C102.385773,96.1869159 114.571914,107.218203 121.773745,124 Z" id="Rectangle-1" fill="#1b4a08" sketch:type="MSShapeGroup"></path>
+          <path d="M64.5,40.5 L98.2355535,49.5 L134.5,46.3277829" id="Line" stroke="#386900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+      </g>
+   
+      <g id="fruit" sketch:type="MSLayerGroup" transform="translate(169.000000, 128.000000)">
+          <circle id="Oval-2" fill="#AA0201"  sketch:type="MSShapeGroup" cx="70.5" cy="63.5" r="28.5"></circle>
+          <circle id="Oval-1" fill="#AA0201"  sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle>
+          <circle id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="46.5" cy="29.5" r="4.5"></circle>
+          <circle id="Oval-6" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="49.5" cy="19.5" r="2.5"></circle>
+          <path d="M81.2727273,57.8571429 C83.0802046,57.8571429 84.5454545,56.3221191 84.5454545,54.4285714 C84.5454545,52.5350237 83.0802046,51 81.2727273,51 C79.4652499,51 78,52.5350237 78,54.4285714 C78,56.3221191 79.4652499,57.8571429 81.2727273,57.8571429 Z" id="Oval-4" fill="#EBEBEB" sketch:type="MSShapeGroup"></path>
+          <ellipse id="Oval-5" fill="#EFEFEF" sketch:type="MSShapeGroup" cx="86.4545455" cy="60.5714286" rx="2.45454545" ry="2.57142857"></ellipse>
+          
+      </g>
+    </g>
+  </svg>
+</div>
+	</div>
+	<div id="plate"></div>
+</div>
+</div>
+<!-- fin de diax -->
+
+	
+<div id="navidad" style="display:none"> 
+		<h1><div>Feliz navidad</div></h1>
+		
+<div class="mistletoe">
+  <svg width="1000px" height="800px" viewBox="0 0 1000 800">
+      
+   <g
+     id="star"
+     transform="matrix(0.99558461,-0.09386847,0.09386847,0.99558461,-13.748213,32.911654)">
+    <path
+       id="outer-star"
+       fill="#d4cd17" d="m 558.1214,0.015 -16.69,124.03 -8.94,-36.01 4.52,40.36 -20.72,-35.9 14.37,34.49 -67.46,-69.52 61.37,74.11 -34.21,-19.68 34.47,25.62 -42.46,-12.01 36.91,15.09 -101.61,-5.61 100.85,12.82 -39.47,8.16 44.22,-4.13 -39.33,18.91 37.76,-13.14 -76.16,61.6 81.19,-56 -21.57,31.21 28.08,-31.47 -13.17,38.76 16.56,-33.69 -13.2,157.18 21.08,-156.53 8.94,36.08 -4.53,-40.37 20.72,35.9 -14.39,-34.47 67.48,69.52 -61.35,-74.11 34.19,19.68 -34.47,-25.62 42.46,12.02 -36.94,-15.12 101.64,5.61 -100.83,-12.81 39.45,-8.15 -44.22,4.13 39.33,-18.91 -37.79,13.14 76.19,-61.6 -81.17,56 21.55,-31.22 -28.08,31.46 13.17,-38.76 -16.56,33.75 10.46,-124.82 -1.64,0.02 z"
+       inkscape:connector-curvature="0"></path>
+     </g>
+  <path
+     inkscape:connector-curvature="0"
+fill="#2e2d2d"
+     d="m 342.9714,231.815 -208.56,94.36 -18.47,266.73 h 42.51 c 0,0 0.13,-6.13 0.22,-15.57 0.26,-28.31 0.23,-86.52 -3.93,-99.1 -2.21,-6.66 34.82,-139.49 34.82,-139.49 l 153.41,-63.08 153.42,63.08 c 0,0 36.96,132.83 34.76,139.49 -5.55,16.78 -3.65,114.67 -3.65,114.67 h 42.51 l -18.48,-266.73 -208.56,-94.36 z"
+     id="shelter" ></path>
+  <path
+     inkscape:connector-curvature="0"
+fill="#AB7C94"
+     d="m 289.1814,533.365 c -2.25,-0.15 -5.46,0.54 -8.87,2.42 -5,2.75 -4.36,10.73 -4.21,12.09 h -8.99 v 11.26 c 0,8.07 6.85,13.9 17.91,17.73 l -6.9,14.78 h 17.24 l 2.07,-11.63 c 9.26,1.71 20.06,2.58 31.62,2.58 11.56,0 22.3,-0.87 31.56,-2.58 l 2.13,11.63 h 17.24 l -6.96,-14.73 c 11.11,-3.83 17.97,-9.69 17.97,-17.78 v -11.26 h -17.69 c -0.28,-1.89 -1.14,-4.2 -2.41,-5.31 -7.79,-6.83 -12.71,-5.1 -31.51,-5.1 -14.58,0 -26.99,2.2 -31.84,5.26 -0.41,-4.12 -3.16,-5.61 -7.07,-6.16 -0.01,-0.01 -0.17,-0.26 -0.17,-0.26 0,0 -7.03,-0.39 -8.31,-1.89 -0.48,-0.57 -1.46,-0.97 -2.81,-1.05 z"
+     id="Jesus"></path>
+  <path
+     inkscape:connector-curvature="0"
+fill="#AB7C94"
+     d="m 409.5014,309.935 c 4.11,0.22 8.51,2.36 13.48,7.68 -0.33,0.7 25.79,21.94 36.56,34.66 10.57,12.49 18.69,32.1 27.18,40.5 l -6.24,5.94 c -7.98,6.4 -6.26,6.17 -12.35,12.89 2.18,27.28 9.87,80.06 15.33,105.41 6.07,28.18 20.65,45.61 28.58,61.96 l 5.5,11.36 -122.19,-0.05 c 1.36,-0.18 2.22,-6.01 20.1,-122.72 1.16,-7.52 2.2,-14.65 3.15,-21.46 -13.02,-6.4 -27.97,-27.93 -27.97,-27.93 l 0.45,-39.18 c -2.04,-1.63 -4.29,-2.68 -5.56,-3.58 -6.12,-4.33 -11.74,-11.74 -12.91,-16.99 -0.62,-2.74 1.5,-5.78 2.52,-6.26 2.74,-0.78 3.67,-0.47 5.34,0.11 2.06,0.71 3.36,2.09 5.05,3.94 -0.65,-1.14 0.76,-1.13 1.41,-1.52 0.96,-0.58 2.42,0.95 3.82,2.31 1.9,1.86 4.11,4.67 4.88,7.21 6.14,7.48 17.82,20.09 27.74,20.93 0.82,0.07 1.61,0.13 2.3,0.16 1.2,-12.83 2.51,-15.99 2.14,-18.62 -1.91,-13.38 -2.08,-9.62 -2.08,-9.62 0,0 -5.77,7.56 -9.94,7.2 -5.11,-0.44 -3,-4.58 -10.22,-10.78 -2.98,-2.56 -7.62,-11.22 -9.94,-14.73 l -3.76,5.89 c 0,0 -6.28,-15.04 -1.74,-21.14 4.05,-5.43 6.72,-9.99 13.14,-12.52 0.73,-0.28 1.44,-0.51 2.19,-0.68 1.31,-0.32 2.67,-0.45 4.04,-0.37 z"
+     id="Joseph"></path>
+  <path
+     inkscape:connector-curvature="0"
+fill="#AB7C94"
+     d="m 242.9714,399.185 c 1.71,0.03 3.46,0.35 5.06,0.72 3.16,0.73 6.08,2.49 8.52,4.51 2.22,1.85 5.23,6.72 5.23,6.72 0,0 3.81,6.87 3.29,11.56 -0.51,4.7 -1.06,9.42 -1.06,9.42 0,0 0.14,0.48 -1.7,0.05 -1.28,-0.3 -2.6,-1.68 -3.29,-2.53 -0.6,2.18 -1.56,4.23 -2.76,6.6 -2.03,4.01 -6.41,5.63 -10.35,9.09 -2.34,2.05 -8.34,-4.39 -9.76,-3.3 -1,0.77 2.18,9.41 2.18,9.41 l 2.82,6.33 c 2.33,5.21 2.6,13.66 0.88,23.67 3.23,-2.25 7.48,-5.64 10.35,-8.36 1.75,-1.67 2.99,-3.1 3.17,-3.8 0.45,-1.77 0.48,-3.7 -0.23,-5.07 -1.45,-2.75 0.37,-8.35 1.64,-11.56 0.74,-1.85 0.41,-3.54 1.59,-3.36 0.79,0.13 1.97,0.81 1.23,3.97 1.5,-2.41 2.11,-6 4.23,-8.37 0.63,-0.7 1.93,-2.72 2.59,-3.31 0.69,-0.61 1.96,0.6 2.65,1.05 2.71,3.06 2.77,3.81 3.05,6 0.36,2.75 -1.37,6.09 -1.82,8.09 -0.74,3.35 -1.04,6.04 -3.53,10.13 -0.56,0.93 -4.46,9.72 -5.87,12.34 -2.73,5.02 -2.24,4.81 -3.3,8.2 -0.7,3.26 -3.76,11.23 -7.28,11.78 -2.17,0.34 -7.64,0.07 -12.35,-0.27 -0.23,3.45 0.87,6.47 4.12,14.09 7.33,17.2 10.86,25.11 12.58,43.11 0.3,3.25 7.17,18.8 3.35,27.19 -1.53,3.35 -6.93,6.61 -9.29,6.61 -18.56,0.92 -50.5,0.14 -77.76,-0.11 0,0 -5.92,0.02 -12.88,-1.04 -3.1,-5.83 1.65,-11.03 5.53,-14.76 7.4,-7.13 28.77,-8.11 29.8,-10.62 0.99,-1.78 1.98,-4.32 2.94,-7.38 5.08,-16.16 9.4,-46.69 9.4,-53.57 0,-4.86 -7.66,-0.87 -8.76,-8.92 -1.34,-9.9 0.57,-25.1 4.88,-35.4 2.13,-5.09 7.72,-12 9.94,-18.83 5.57,-17.18 13.04,-29.19 21.39,-34.85 1.51,-1.83 3.1,-3.38 4.76,-4.24 1.44,-0.74 3.12,-1.01 4.82,-0.99 z"
+     id="Mary" ></path>
+  <rect
+fill="#332220"
+     x="-4.6348571e-08"
+     y="589.78503"
+     width="676.42999"
+     height="10.875999"
+     ry="2.6603999"
+     id="ground" ></rect>
+  </svg>
+</div>
+</div>
+
+<div id="noadvent" style="visibility: hidden">
+	<!-- <div id="noadvent" style="display:none"> -->
+		<h1><div  class="centrado">No estamos en adviento</div></h1>
+		<h3><div id="mensajeno" class="centrado"></div></h3>
+		<h3><div id="pregunta" class="centrado">¿Deseas encender una vela?</div></h3>
+		<div class="centrado"><form name="velaout">
+		<INPUT TYPE="button"  VALUE="Sí" ONCLICK="return velaoutonm()"></INPUT>
+		<INPUT TYPE="button"  VALUE="No" ONCLICK="return salirapp()"></INPUT>
+		</form></div>
+	</div>
+
+</body>
+</html>
